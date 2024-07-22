@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "SlovakBlok",
+  "version": "1.0",
+  "description": "Blokuje slovenské recenze produktů na alza.cz",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.alza.cz/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
